@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>查询</title>
+</head>
+<body>
+<form method="get" action="/query/">
+    <div>
+        <div>事件内容</div>
+        <input type="text" name="text" value="{{text}}">
+    </div>
+    <div>
+        <div>事件时间</div>
+        <input type="text" name="time" value="{{time}}">
+    </div>
+    <input type="submit" value="添加" name="add">
+    <input type="submit" value="查询" name="query">
+    <input type="submit" value="重写" name="reset">
+
+
+    {% for item in result %}
+    <div>
+        <p>
+            {{item}}
+            <input type="submit" value="delete {{item}}" name="delete">
+        </p>
+    </div>
+    {% endfor %}
+</form>
+</body>
+</html>
